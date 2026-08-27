@@ -1,0 +1,18 @@
+[theme]
+primaryColor = "#1F4E5F"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F2F6F8"
+textColor = "#2D3748"
+font = "sans serif"
+
+[server]
+headless = true
+
+# Vuelve a ejecutar la app al guardar un archivo, sin recargar el navegador.
+runOnSave = true
+
+# Detección de cambios por sondeo (comparando fecha de modificación).
+# Necesario en este equipo: el watcher basado en eventos (watchdog) no detecta
+# los cambios en las subcarpetas config/, utils/ y ui/, por lo que al editar
+# un color el módulo seguía en memoria y el mapa no se actualizaba.
+fileWatcherType = "poll"
