@@ -1,6 +1,6 @@
 """Catálogo oficial de las 32 entidades federativas de México.
 
-Fuente de verdad del proyecto. La llave canónica es la clave INEGI de dos
+La llave canónica es la clave INEGI de dos
 dígitos ("01"-"32"), que es la que utilizan INEGI, la Secretaría de Salud
 (DGIS) y CONAPO en sus bases de datos.
 """

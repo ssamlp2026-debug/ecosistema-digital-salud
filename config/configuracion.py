@@ -39,7 +39,7 @@ SUBTITULO_APP = (
 
 )
 DESCRIPCION_APP = (
-    "Esta plataforma integra información geográfica de las 32 entidades federativas "
+    "Esta plataforma integra información geográfica de las entidades federativas "
     "como base para la consulta y el análisis de indicadores del sector salud. "
 )
 ICONO_APP = "🏥"

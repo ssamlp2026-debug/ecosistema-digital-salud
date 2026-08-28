@@ -36,14 +36,14 @@ COLORES_ESTADOS: dict[str, str] = {
 }
 
 # Color para cualquier entidad sin color o sin dato asignado.
-COLOR_SIN_INFORMACION = "#D9D9D9"
+SIN_SNSP = "#de70e6"
 
 # Paleta semántica que se usará cuando el mapa se alimente de datos.
 COLORES_CATEGORIA: dict[str, str] = {
-    "Alta": "#38A169",
-    "Media": "#ECC94B",
-    "Baja": "#E53E3E",
-    "Sin información": COLOR_SIN_INFORMACION,
+    "Próximos por entrar al EDS": "#fafafa",
+    "En proceso": "#f7e62b",
+    "No participa": "#D3D3D3",
+    "Sin información": SIN_SNSP,
 
 }
 

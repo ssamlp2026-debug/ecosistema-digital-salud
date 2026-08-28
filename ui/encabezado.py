@@ -1,4 +1,4 @@
-"""Encabezado y estilos globales de la aplicación."""
+"""Encabezado de la aplicación."""
 
 import streamlit as st
 

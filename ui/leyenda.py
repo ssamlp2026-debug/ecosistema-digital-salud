@@ -17,9 +17,8 @@ def render_leyenda() -> None:
     """Explica el significado de los colores del mapa."""
     st.markdown("#### Leyenda")
     st.caption(
-        "Modo actual: **color asignado por entidad**. Cada estado tiene un color "
-        "definido manualmente en `config/colores.py` para distinguir sus límites; "
-        "todavía no representa el valor de un indicador."
+        "Modo actual: **Gris entidades que no participan, Amarillo entidades en proceso, Blanco entraran en futuro"
+
     )
 
     chips = _chip(paleta.COLOR_SIN_INFORMACION, "Entidad sin color asignado")
