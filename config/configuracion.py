@@ -47,7 +47,7 @@ TILES_BASE = "cartodbpositron"
 ALTURA_MAPA = 560
 
 # Textos de la interfaz.
-TITULO_APP = "ECOSISTEMA DIGITAL DE SALUD"
+TITULO_APP = "ECOSISTEMA DIGITAL EN SALUD"
 SUBTITULO_APP = (
     "Plataforma para la visualización y análisis de información "
 

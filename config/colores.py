@@ -29,7 +29,7 @@ COLORES_ESTADOS: dict[str, str] = {
     "Sonora": "#f7e62b",
     "Tabasco": "#fafafa",
     "Tamaulipas": "#f7e62b",
-    "Tlaxcala": "#fafafa",
+    "Tlaxcala": "#f7e62b",
     "Veracruz": "#f7e62b",
     "Yucatán": "#fafafa",
     "Zacatecas": "#fafafa",
