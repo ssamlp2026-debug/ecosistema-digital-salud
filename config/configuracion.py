@@ -14,6 +14,20 @@ RUTA_GEOJSON = DIR_GEOJSON / "mexico_estados.geojson"
 RUTA_ESTILOS = DIR_ASSETS / "estilos.css"
 RUTA_DATOS_EJEMPLO = DIR_EJEMPLO / "datos_ejemplo.csv"
 
+# Logo institucional. Se busca en assets/ con cualquiera de estas extensiones,
+# así da igual si el archivo se guarda como .png, .svg o .jpg.
+NOMBRE_LOGO = "logo_snsp"
+EXTENSIONES_LOGO = (".png", ".svg", ".jpg", ".jpeg", ".webp")
+
+
+def buscar_logo():
+    """Ruta del logo si existe en assets/, o None si todavía no se ha guardado."""
+    for extension in EXTENSIONES_LOGO:
+        candidato = DIR_ASSETS / f"{NOMBRE_LOGO}{extension}"
+        if candidato.exists():
+            return candidato
+    return None
+
 # Propiedades del GeoJSON donde puede venir el nombre de la entidad.
 # Se prueban en orden; así el proyecto tolera otros archivos (INEGI, Natural Earth).
 PROPIEDADES_NOMBRE = ("name", "NOMBRE", "NOM_ENT", "nom_ent", "ESTADO", "estado", "NOM_AGEE")

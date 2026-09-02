@@ -7,19 +7,6 @@ from utils.coloreo import ReporteColores
 from utils.geodatos import ReporteGeoJSON
 
 
-def render_panel_filtros() -> None:
-    """Área reservada para los filtros de la plataforma."""
-    st.markdown("#### Filtros")
-    st.selectbox(
-        "Indicador",
-        ["(pendiente de cargar datos)"],
-        disabled=True,
-        help="Se activará cuando la plataforma cuente con archivos de indicadores.",
-    )
-    st.caption("Los filtros por indicador, periodo y categoría se habilitarán "
-               "en la siguiente etapa del proyecto.")
-
-
 def render_detalle_entidad(propiedades: dict | None) -> None:
     """Información de la entidad seleccionada en el mapa."""
     st.markdown("#### Entidad seleccionada")

@@ -1,3 +1,21 @@
+.eds-encabezado {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+}
+
+.eds-logo {
+    height: 76px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.eds-titulos {
+    min-width: 0;
+}
+
 .eds-encabezado h1 {
     font-size: 2.1rem;
     letter-spacing: 0.5px;
@@ -40,4 +58,14 @@
     border-radius: 3px;
     margin-right: 0.45rem;
     display: inline-block;
+}
+
+@media (max-width: 640px) {
+    .eds-logo {
+        height: 56px;
+    }
+
+    .eds-encabezado h1 {
+        font-size: 1.6rem;
+    }
 }

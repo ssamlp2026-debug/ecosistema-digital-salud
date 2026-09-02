@@ -13,7 +13,6 @@ from ui.leyenda import render_leyenda
 from ui.paneles import (
     render_detalle_entidad,
     render_diagnostico,
-    render_panel_filtros,
     render_panel_indicadores,
 )
 from utils.coloreo import colores_manuales
@@ -21,10 +20,16 @@ from utils.geodatos import ErrorGeoJSON, cargar_entidades
 from utils.mapa import crear_mapa, entidad_seleccionada
 
 
+def _icono_pagina():
+    """Logo para la pestaña del navegador; emoji como respaldo."""
+    ruta = cfg.buscar_logo()
+    return str(ruta) if ruta else cfg.ICONO_APP
+
+
 def main() -> None:
     st.set_page_config(
         page_title=cfg.TITULO_APP,
-        page_icon=cfg.ICONO_APP,
+        page_icon=_icono_pagina(),
         layout="wide",
     )
 
@@ -55,8 +60,6 @@ def main() -> None:
         render_leyenda()
 
     with columna_lateral:
-        render_panel_filtros()
-        st.divider()
         render_detalle_entidad(entidad_seleccionada(resultado))
 
     st.divider()

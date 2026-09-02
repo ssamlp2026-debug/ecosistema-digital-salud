@@ -50,11 +50,11 @@ def colores_por_categoria(
     'Baja' → rojo, cualquier otro valor → gris.
     """
     return {
-        clave: paleta.COLORES_CATEGORIA.get(categoria, paleta.COLOR_SIN_INFORMACION)
+        clave: paleta.COLORES_CATEGORIA.get(categoria, paleta.SIN_SNSP)
         for clave, categoria in categorias_por_clave.items()
     }
 
 
 def color_de(colores: dict[str, str], clave: str) -> str:
     """Color de una entidad, con gris como valor por omisión."""
-    return colores.get(clave) or paleta.COLOR_SIN_INFORMACION
+    return colores.get(clave) or paleta.SIN_SNSP

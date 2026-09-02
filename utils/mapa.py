@@ -16,7 +16,7 @@ def _funcion_estilo(colores: dict[str, str]):
     def estilo(feature):
         clave = feature["properties"].get(cfg.PROP_CLAVE, "")
         return {
-            "fillColor": colores.get(clave) or paleta.COLOR_SIN_INFORMACION,
+            "fillColor": colores.get(clave) or paleta.SIN_SNSP,
             "color": paleta.COLOR_BORDE,
             "weight": paleta.GROSOR_BORDE,
             "fillOpacity": paleta.OPACIDAD_RELLENO,
