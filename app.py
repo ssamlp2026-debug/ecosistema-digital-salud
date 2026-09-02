@@ -21,8 +21,16 @@ from utils.mapa import crear_mapa, entidad_seleccionada
 
 
 def _icono_pagina():
-    """Logo para la pestaña del navegador; emoji como respaldo."""
-    ruta = cfg.buscar_logo()
+    """Logo para la pestaña del navegador; emoji como respaldo.
+
+    El icono es decorativo y se resuelve antes de dibujar nada, así que un
+    fallo aquí dejaría la aplicación sin abrir. Ante cualquier problema se
+    usa el emoji y se continúa.
+    """
+    try:
+        ruta = cfg.buscar_logo()
+    except Exception:
+        return cfg.ICONO_APP
     return str(ruta) if ruta else cfg.ICONO_APP
 
 

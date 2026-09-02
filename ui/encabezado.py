@@ -24,7 +24,12 @@ def aplicar_estilos() -> None:
 
 def logo_como_datauri() -> str | None:
     """Codifica el logo para incrustarlo en el HTML del encabezado."""
-    ruta = cfg.buscar_logo()
+    # El logo es decorativo: si no se puede resolver, el encabezado se
+    # dibuja solo con el título en lugar de tumbar la página.
+    try:
+        ruta = cfg.buscar_logo()
+    except Exception:
+        return None
     if ruta is None:
         return None
 
