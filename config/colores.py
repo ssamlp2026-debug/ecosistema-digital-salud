@@ -40,8 +40,8 @@ SIN_SNSP = "#de70e6"
 
 # Paleta semántica que se usará cuando el mapa se alimente de datos.
 COLORES_CATEGORIA: dict[str, str] = {
-    "Entidades programadas para entar en actividades": "#fafafa",
-    "Entidades participando en actividades": "#f7e62b",
+    "Programadas para entrar en actividades": "#fafafa",
+    "Participando en actividades": "#f7e62b",
     "No participa": "#D3D3D3",
     "Sin SNSP": SIN_SNSP,
 
