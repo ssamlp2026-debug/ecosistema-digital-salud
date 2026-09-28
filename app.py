@@ -13,10 +13,16 @@ from ui.leyenda import render_leyenda
 from ui.paneles import (
     render_detalle_entidad,
     render_diagnostico,
-    render_panel_indicadores,
+    render_resumen_general,
 )
 from utils.coloreo import colores_manuales
 from utils.geodatos import ErrorGeoJSON, cargar_entidades
+from utils.indicadores import (
+    ErrorIndicadores,
+    TablaIndicadores,
+    anotar_geojson,
+    cargar_indicadores,
+)
 from utils.mapa import crear_mapa, entidad_seleccionada
 
 
@@ -52,13 +58,27 @@ def main() -> None:
 
     colores, reporte_color = colores_manuales()
 
+    # Los indicadores son opcionales: si el Excel falta o no se puede leer,
+    # el mapa debe seguir funcionando.
+    try:
+        tabla = cargar_indicadores()
+        aviso_indicadores = ""
+    except ErrorIndicadores as error:
+        tabla = TablaIndicadores()
+        aviso_indicadores = str(error)
+
+    st.divider()
+    render_resumen_general(tabla)
+    if aviso_indicadores:
+        st.warning(aviso_indicadores)
+
     st.divider()
 
     columna_mapa, columna_lateral = st.columns([3, 1], gap="large")
 
     with columna_mapa:
         st.markdown("### Mapa de entidades federativas")
-        mapa = crear_mapa(geojson, colores)
+        mapa = crear_mapa(anotar_geojson(geojson, tabla), colores)
         resultado = st_folium(
             mapa,
             height=cfg.ALTURA_MAPA,
@@ -68,13 +88,10 @@ def main() -> None:
         render_leyenda()
 
     with columna_lateral:
-        render_detalle_entidad(entidad_seleccionada(resultado))
+        render_detalle_entidad(entidad_seleccionada(resultado), tabla)
 
     st.divider()
-    render_panel_indicadores(reporte_geo.reconocidas)
-
-    st.divider()
-    render_diagnostico(reporte_geo, reporte_color)
+    render_diagnostico(reporte_geo, reporte_color, tabla)
 
 
 if __name__ == "__main__":

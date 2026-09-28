@@ -14,6 +14,15 @@ RUTA_GEOJSON = DIR_GEOJSON / "mexico_estados.geojson"
 RUTA_ESTILOS = DIR_ASSETS / "estilos.css"
 RUTA_DATOS_EJEMPLO = DIR_EJEMPLO / "datos_ejemplo.csv"
 
+# Archivo de indicadores de implementación. Se busca en orden: primero en
+# data/, que es donde corresponde, y luego en la raíz del proyecto, que es
+# donde resulta cómodo tenerlo mientras se captura.
+NOMBRE_EXCEL_INDICADORES = "Personasl y establecimientos.xlsx"
+RUTAS_EXCEL_INDICADORES = (
+    DIR_DATOS / NOMBRE_EXCEL_INDICADORES,
+    BASE_DIR / NOMBRE_EXCEL_INDICADORES,
+)
+
 # Logo institucional. Se busca en assets/ con cualquiera de estas extensiones,
 # así da igual si el archivo se guarda como .png, .svg o .jpg.
 NOMBRE_LOGO = "logo_snsp"
@@ -53,6 +62,8 @@ PROPIEDADES_NOMBRE = ("name", "NOMBRE", "NOM_ENT", "nom_ent", "ESTADO", "estado"
 PROP_CLAVE = "clave"
 PROP_ENTIDAD = "entidad"
 PROP_ISO = "iso"
+PROP_ESTABLECIMIENTOS = "establecimientos_atendidos"
+PROP_PERSONAL = "personal_asignado"
 
 # Vista inicial del mapa (centro geográfico aproximado de México).
 CENTRO_MEXICO = (23.6345, -102.5528)

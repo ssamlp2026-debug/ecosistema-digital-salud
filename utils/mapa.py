@@ -70,8 +70,16 @@ def crear_mapa(
             ),
         ),
         popup=folium.GeoJsonPopup(
-            fields=[cfg.PROP_ENTIDAD, cfg.PROP_CLAVE, cfg.PROP_ISO],
-            aliases=["Entidad", "Clave INEGI", "Código ISO"],
+            fields=[
+                cfg.PROP_ENTIDAD,
+                cfg.PROP_ESTABLECIMIENTOS,
+                cfg.PROP_PERSONAL,
+            ],
+            aliases=[
+                "Entidad",
+                "Establecimientos de salud atendidos",
+                "Personal con asignación en la implementación",
+            ],
             localize=True,
             labels=True,
             max_width=320,
