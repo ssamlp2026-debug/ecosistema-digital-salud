@@ -47,6 +47,7 @@ def crear_mapa(
         min_zoom=cfg.ZOOM_MINIMO,
         max_zoom=cfg.ZOOM_MAXIMO,
         tiles=cfg.TILES_BASE,
+        attr=cfg.ATRIBUCION_TILES,
         control_scale=True,
         zoom_control=True,
         scrollWheelZoom=True,

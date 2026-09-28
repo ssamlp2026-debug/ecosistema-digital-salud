@@ -22,12 +22,14 @@ def aplicar_estilos() -> None:
         st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
-def logo_como_datauri() -> str | None:
-    """Codifica el logo para incrustarlo en el HTML del encabezado."""
-    # El logo es decorativo: si no se puede resolver, el encabezado se
-    # dibuja solo con el título en lugar de tumbar la página.
+def imagen_como_datauri(nombre: str) -> str | None:
+    """Codifica una imagen de assets/ para incrustarla en el HTML.
+
+    Las imágenes del encabezado son decorativas: si alguna no se puede
+    resolver se omite, en lugar de tumbar la página.
+    """
     try:
-        ruta = cfg.buscar_logo()
+        ruta = cfg.buscar_imagen(nombre)
     except Exception:
         return None
     if ruta is None:
@@ -38,7 +40,42 @@ def logo_como_datauri() -> str | None:
     return f"data:{mime};base64,{datos}"
 
 
+def logo_como_datauri() -> str | None:
+    """Logo del SNSP listo para incrustar."""
+    return imagen_como_datauri(cfg.NOMBRE_LOGO)
+
+
+def _etiqueta_img(nombre: str, alt: str, clase: str) -> str:
+    """Etiqueta <img> con la imagen incrustada, o cadena vacía si no existe."""
+    uri = imagen_como_datauri(nombre)
+    return f'<img class="{clase}" src="{uri}" alt="{alt}">' if uri else ""
+
+
+def render_banda_institucional() -> None:
+    """Banda superior con la identidad gráfica institucional."""
+    izquierda = _etiqueta_img(*cfg.IMAGEN_BANDA_IZQUIERDA, clase="eds-banda-logo")
+    derecha = "".join(
+        _etiqueta_img(nombre, alt, clase="eds-banda-logo")
+        for nombre, alt in cfg.IMAGENES_BANDA_DERECHA
+    )
+
+    if not izquierda and not derecha:
+        return
+
+    st.markdown(
+        f"""
+        <div class="eds-banda">
+            <div class="eds-banda-grupo">{izquierda}</div>
+            <div class="eds-banda-grupo">{derecha}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def render_encabezado() -> None:
+    render_banda_institucional()
+
     logo = logo_como_datauri()
     imagen = (
         f'<img class="eds-logo" src="{logo}" alt="Servicio Nacional de Salud Pública">'
