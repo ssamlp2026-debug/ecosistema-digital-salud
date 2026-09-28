@@ -2,8 +2,8 @@
 # Color a cada entidad federativa.
 COLORES_ESTADOS: dict[str, str] = {
     "Aguascalientes": "#D3D3D3",
-    "Baja California": "#fafafa",
-    "Baja California Sur": "#fafafa",
+    "Baja California": "#f7e62b",
+    "Baja California Sur": "#f7e62b",
     "Campeche": "#fafafa",
     "Chiapas": "#de70e6",
     "Chihuahua": "#D3D3D3",
@@ -16,9 +16,9 @@ COLORES_ESTADOS: dict[str, str] = {
     "Guerrero": "#f7e62b",
     "Hidalgo": "#f7e62b",
     "Jalisco": "#D3D3D3",
-    "Michoacán": "#fafafa",
+    "Michoacán": "#f7e62b",
     "Morelos": "#f7e62b",
-    "Nayarit": "#fafafa",
+    "Nayarit": "#f7e62b",
     "Nuevo León": "#D3D3D3",
     "Oaxaca": "#f7e62b",
     "Puebla": "#f7e62b",
@@ -32,7 +32,7 @@ COLORES_ESTADOS: dict[str, str] = {
     "Tlaxcala": "#fafafa",
     "Veracruz": "#f7e62b",
     "Yucatán": "#fafafa",
-    "Zacatecas": "#fafafa",
+    "Zacatecas": "#f7e62b",
 }
 
 # Color para cualquier entidad sin color o sin dato asignado.
