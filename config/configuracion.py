@@ -30,10 +30,12 @@ EXTENSIONES_LOGO = (".png", ".svg", ".jpg", ".jpeg", ".webp")
 
 # Banda institucional superior: identidad gráfica del Gobierno de México.
 # Cada entrada es (nombre del archivo en assets/, texto alternativo).
-IMAGEN_BANDA_IZQUIERDA = ("logo_salud", "Secretaría de Salud")
+# Se usan las versiones en blanco porque la banda tiene fondo vino: los
+# archivos originales son tinta guinda y dorada, pensados para fondo claro.
+IMAGEN_BANDA_IZQUIERDA = ("logo_salud_blanco", "Secretaría de Salud")
 IMAGENES_BANDA_DERECHA = (
-    ("imagen_bandera", "Ilustración de una mujer portando la bandera de México"),
-    ("logo_gobmx", "Gobierno de México"),
+    ("imagen_bandera_blanco", "Ilustración de una mujer portando la bandera de México"),
+    ("logo_gobmx_blanco", "Gobierno de México"),
 )
 
 
