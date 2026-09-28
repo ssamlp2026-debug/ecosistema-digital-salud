@@ -77,8 +77,12 @@ def render_encabezado() -> None:
     render_banda_institucional()
 
     logo = logo_como_datauri()
+    # El logo va sobre una tarjeta blanca: su arte es guinda sobre blanco
+    # y sin ella se perdería contra el fondo vino del encabezado.
     imagen = (
+        '<span class="eds-logo-marco">'
         f'<img class="eds-logo" src="{logo}" alt="Servicio Nacional de Salud Pública">'
+        "</span>"
         if logo
         else ""
     )

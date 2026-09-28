@@ -47,6 +47,12 @@ COLORES_CATEGORIA: dict[str, str] = {
 
 }
 
+# Paleta institucional del Gobierno de México.
+# Se usa en el encabezado y los acentos de la interfaz, no en el mapa.
+GUINDA = "#9F2241"
+GUINDA_OSCURO = "#611232"
+DORADO = "#B38E5D"
+
 # Estilo de los bordes y del resaltado al pasar el cursor.
 COLOR_BORDE = "#5A6B7B"
 GROSOR_BORDE = 0.7
